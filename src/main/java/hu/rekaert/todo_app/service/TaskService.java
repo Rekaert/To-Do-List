@@ -26,11 +26,9 @@ public class TaskService {
         return taskRepository.save(task);
     }
 
-    public Task updateTask(Long id, Task updatedTask) {
+    public Task updateTask(Long id, boolean completed) {
         Task task = getTaskById(id);
-        task.setTitle(updatedTask.getTitle());
-        task.setDescription(updatedTask.getDescription());
-        task.setCompleted(updatedTask.getCompleted());
+        task.setCompleted(completed);
         return taskRepository.save(task);
     }
 
